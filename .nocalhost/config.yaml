@@ -1,0 +1,6 @@
+configProperties:
+  version: v2
+application:
+  helmValues:
+    - key: gin-vue-2022-06-11t11-36-29-backend.nocalhost.enabled
+      value: true

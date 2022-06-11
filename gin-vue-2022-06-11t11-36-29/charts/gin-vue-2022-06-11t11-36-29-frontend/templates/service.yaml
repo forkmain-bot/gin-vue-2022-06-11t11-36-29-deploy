@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "gin-vue-2022-06-11t11-36-29-frontend.fullname" . }}
+  labels:
+    {{- include "gin-vue-2022-06-11t11-36-29-frontend.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "gin-vue-2022-06-11t11-36-29-frontend.selectorLabels" . | nindent 4 }}
